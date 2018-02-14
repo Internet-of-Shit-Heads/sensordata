@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package at.ac.tuwien.iot1718;
+
+message Command {
+	enum CommandType {
+		NEW_UPDATE_INTERVAL = 1;
+	}
+	required CommandType type = 1;
+	repeated fixed32 params = 2;
+}
+
+message N2C {
+	required fixed32 roomNo = 1;
+	enum SensorType {
+		TEMPERATURE = 1;
+		HUMIDITY = 2;
+	}
+	required SensorType type = 2;
+	required fixed32 data = 3;
+}
+
+message C2N {
+	required fixed32 timestamp = 1;
+	optional Command command = 2;
+}
