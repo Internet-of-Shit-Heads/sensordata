@@ -7,17 +7,20 @@ message Command {
 		NEW_UPDATE_INTERVAL = 1;
 	}
 	required CommandType type = 1;
-	repeated fixed32 params = 2;
+	optional fixed32 param1 = 2;
+	optional fixed32 param2 = 3;
+	optional fixed32 param3 = 4;
 }
 
 message N2C {
-	required fixed32 roomNo = 1;
+	required fixed32 timestamp = 1;
+	required fixed32 roomNo = 2;
 	enum SensorType {
 		TEMPERATURE = 1;
 		HUMIDITY = 2;
 	}
-	required SensorType type = 2;
-	required fixed32 data = 3;
+	required SensorType type = 3;
+	required fixed32 data = 4;
 }
 
 message C2N {
