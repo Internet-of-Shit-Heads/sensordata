@@ -7,9 +7,9 @@ message Command {
 		NEW_UPDATE_INTERVAL = 1;
 	}
 	required CommandType type = 1;
-	optional fixed32 param1 = 2;
-	optional fixed32 param2 = 3;
-	optional fixed32 param3 = 4;
+	optional sfixed32 param1 = 2;
+	optional sfixed32 param2 = 3;
+	optional sfixed32 param3 = 4;
 }
 
 message N2C {
@@ -21,7 +21,7 @@ message N2C {
 		HUMIDITY = 2;
 	}
 	required SensorType type = 4;
-	required fixed32 data = 5;
+	required sfixed32 data = 5;
 }
 
 message C2N {
