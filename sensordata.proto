@@ -22,7 +22,7 @@ message N2C {
 		HUMIDITY = 2;
 	}
 	required SensorType type = 5;
-	required sfixed32 data = 6;
+	required float data = 6;
 }
 
 message C2N {
