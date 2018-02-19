@@ -15,13 +15,14 @@ message Command {
 message N2C {
 	required fixed32 timestamp = 1;
 	required fixed32 roomNo = 2;
-	required fixed32 nodeId = 3;
+	required uint32 nodeId = 3;
+	required uint32 sensorId = 4;
 	enum SensorType {
 		TEMPERATURE = 1;
 		HUMIDITY = 2;
 	}
-	required SensorType type = 4;
-	required sfixed32 data = 5;
+	required SensorType type = 5;
+	required sfixed32 data = 6;
 }
 
 message C2N {

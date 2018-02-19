@@ -6,7 +6,7 @@ all: $(PNAME).pb.c $(PNAME).pb.h
 $(NANOPB)/generator/proto/nanopb_pb2.py $(NANOPB)/generator/proto/plugin_pb2.py:
 	$(MAKE) -C $(NANOPB)/generator/proto
 
-$(PNAME).pb.c $(PNAME).pb.h: $(NANOPB)/generator/proto/nanopb_pb2.py $(NANOPB)/generator/proto/plugin_pb2.py
+$(PNAME).pb.c $(PNAME).pb.h: $(NANOPB)/generator/proto/nanopb_pb2.py $(NANOPB)/generator/proto/plugin_pb2.py ${PNAME}.proto ${PNAME}.options
 	protoc --plugin=protoc-gen-nanopb=$(NANOPB)/generator/protoc-gen-nanopb --nanopb_out=. $(PNAME).proto	
 
 clean:
